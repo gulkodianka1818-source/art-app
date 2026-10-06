@@ -21,7 +21,8 @@ npm run preview   # перегляд зібраної версії
 | `src/pages/index.astro` | тексти головної сторінки |
 | `src/components/Faq.astro` | питання/відповіді (чернетка — варто перевірити з Діаною) |
 | `public/media/` | готові WebP/MP4 файли |
-| `scripts/process-media.sh` | конвертація сирих файлів з `raw-media/` (не комітиться) у `public/media/` |
+| `raw-media/` | оригінали з Instagram (20 останніх постів) + `posts.json` з підписами |
+| `scripts/process-media.sh` | конвертація `raw-media/` у `public/media/` |
 
 ## Деплой на GitHub Pages
 
