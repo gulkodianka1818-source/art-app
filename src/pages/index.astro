@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import CommissionButton from '../components/CommissionButton.astro';
 import WorkTile from '../components/WorkTile.astro';
 import Faq from '../components/Faq.astro';
+import Pricing from '../components/Pricing.astro';
 import { site, asset } from '../data/site';
 import { bySlug } from '../data/works';
 
@@ -205,6 +206,21 @@ const steps = [
       <div class="center">
         <CommissionButton label="Start your commission" />
       </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICES ============ -->
+  <section class="section section--alt" id="prices">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Price guide</span>
+        <h2>What does a mural cost?</h2>
+        <p class="lede">
+          Every wall is different, so these are starting prices to help you plan. Choose the size and style in the
+          commission form and I’ll send an exact, fixed quote — no surprises.
+        </p>
+      </div>
+      <Pricing />
     </div>
   </section>
 

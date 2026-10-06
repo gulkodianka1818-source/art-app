@@ -41,6 +41,8 @@ const jsonLd = {
       image: ogImage.toString(),
       founder: { '@id': `${Astro.site}#diana` },
       areaServed: site.areas.map((name) => ({ '@type': 'AdministrativeArea', name })),
+      priceRange: '£250–£1,800+',
+      currenciesAccepted: 'GBP',
       address: { '@type': 'PostalAddress', addressRegion: 'London & Kent', addressCountry: 'GB' },
       sameAs: [site.instagram],
       knowsAbout: ['Murals', 'Children’s room murals', 'Nursery murals', 'Trompe-l’œil', 'Portrait drawing', 'Painting'],

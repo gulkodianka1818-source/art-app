@@ -8,9 +8,7 @@ export const site = {
   areas: ['London', 'Kent'],
   instagram: 'https://www.instagram.com/art__diana_deikun/',
   instagramHandle: '@art__diana_deikun',
-
-  // TODO: replace with the real Google Form link once it is created.
-  commissionFormUrl: 'https://forms.gle/REPLACE_WITH_GOOGLE_FORM_ID',
+  commissionFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSe3WpzF6IPILAYfkeqkF69_Op05EiFJXfCbi7bSoh40alkHNg/viewform',
 };
 
 /** Prefix a public/ path with the configured base (needed for GitHub Pages project sites). */
