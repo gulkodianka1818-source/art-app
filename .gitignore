@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+raw-media/
+.DS_Store
+.env
+.claude/settings.local.json

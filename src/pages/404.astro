@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { asset } from '../data/site';
+---
+
+<Base title="Page not found | Diana Deikun">
+  <section class="section center">
+    <div class="wrap">
+      <span class="eyebrow">404</span>
+      <h1>This wall is still blank</h1>
+      <p class="lede">The page you’re looking for doesn’t exist — but there’s plenty to see elsewhere.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" href={asset('')}>Back to home</a>
+        <a class="btn btn--ghost" href={asset('portfolio/')}>View portfolio</a>
+      </div>
+    </div>
+  </section>
+</Base>

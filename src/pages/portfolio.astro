@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+import WorkTile from '../components/WorkTile.astro';
+import CommissionButton from '../components/CommissionButton.astro';
+import { works, categoryLabels, type Category } from '../data/works';
+
+const filters: { key: 'all' | Category; label: string }[] = [
+  { key: 'all', label: 'All' },
+  ...(Object.keys(categoryLabels) as Category[]).map((key) => ({ key, label: categoryLabels[key] })),
+];
+---
+
+<Base
+  title="Portfolio — Murals, Portraits & Artwork | Diana Deikun"
+  description="Hand-painted children’s room murals, 3D illusion walls, window art, portraits and original paintings by London & Kent mural artist Diana Deikun."
+>
+  <section class="section portfolio">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Portfolio</span>
+        <h1 class="portfolio__title">Recent work</h1>
+        <p class="lede">
+          Murals, portraits and paintings — plus a look behind the scenes. Tap any piece to see it larger or watch it
+          come to life.
+        </p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter work">
+        {
+          filters.map((f, i) => (
+            <button type="button" class="filter" data-filter={f.key} aria-pressed={i === 0 ? 'true' : 'false'}>
+              {f.label}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="masonry">
+        {works.map((w, i) => <WorkTile work={w} showTitle eager={i < 4} class="masonry__item" />)}
+      </div>
+
+      <div class="center portfolio__cta">
+        <h2>Like what you see?</h2>
+        <p class="lede">Every piece here started with a short message. Yours could be next.</p>
+        <div class="btn-row">
+          <CommissionButton />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .portfolio {
+    padding-top: clamp(40px, 6vw, 72px);
+  }
+
+  .portfolio__title {
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0 48px;
+  }
+
+  .filter {
+    min-height: 40px;
+    padding: 0 1.3rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .filter[aria-pressed='true'],
+  .filter:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  .masonry {
+    columns: 3 300px;
+    column-gap: 20px;
+  }
+
+  .masonry :global(.masonry__item) {
+    break-inside: avoid;
+    margin-bottom: 28px;
+  }
+
+  .masonry :global(.masonry__item[hidden]) {
+    display: none;
+  }
+
+  .portfolio__cta {
+    margin-top: 72px;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter');
+  const items = document.querySelectorAll<HTMLElement>('.masonry__item');
+
+  buttons.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      items.forEach((it) => {
+        it.hidden = key !== 'all' && it.dataset.category !== key;
+      });
+    }),
+  );
+</script>
