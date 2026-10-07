@@ -8,11 +8,11 @@ export const complexities = [
 ] as const;
 
 export const sizes = [
-  { label: 'Up to 1 m', prices: [250, 350, 450] },
-  { label: '1 – 2 m', prices: [350, 500, 700] },
-  { label: '2 – 3 m', prices: [500, 750, 1000] },
-  { label: '3 – 4 m', prices: [700, 1000, 1400] },
-  { label: '4 m + / whole wall', prices: [900, 1300, 1800] },
+  { label: 'Up to 1 m', prices: [200, 300, 400] },
+  { label: '1 – 2 m', prices: [300, 400, 550] },
+  { label: '2 – 3 m', prices: [400, 600, 800] },
+  { label: '3 – 4 m', prices: [550, 800, 1100] },
+  { label: '4 m + / whole wall', prices: [700, 1000, 1400] },
 ];
 
 export const minPrice = sizes[0].prices[0];

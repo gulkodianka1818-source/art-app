@@ -3,6 +3,8 @@
 Статичний сайт-портфоліо для [@art__diana_deikun](https://www.instagram.com/art__diana_deikun/) (мурали, портрети, картини).
 Зроблено на [Astro](https://astro.build): компоненти як у React, але на виході чистий HTML — найкраще для індексації Google.
 
+**Інструкція для Діани, як правити ціни й тексти самій: [EDITING.md](EDITING.md).**
+
 ## Команди
 
 ```bash
@@ -19,7 +21,8 @@ npm run preview   # перегляд зібраної версії
 | `src/data/site.ts` | **посилання на Google Form** (`commissionFormUrl`), Instagram, локація, SEO-опис |
 | `src/data/works.ts` | список робіт: назви, підписи, alt-тексти, категорії |
 | `src/pages/index.astro` | тексти головної сторінки |
-| `src/components/Faq.astro` | питання/відповіді (чернетка — варто перевірити з Діаною) |
+| `src/components/Faq.astro` | питання/відповіді |
+| `src/data/pricing.ts` | таблиця цін (тримати в синхроні з анкетою) |
 | `public/media/` | готові WebP/MP4 файли |
 | `raw-media/` | оригінали з Instagram (20 останніх постів) + `posts.json` з підписами |
 | `scripts/process-media.sh` | конвертація `raw-media/` у `public/media/` |

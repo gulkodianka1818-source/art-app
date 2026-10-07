@@ -4,16 +4,15 @@ import { site } from '../data/site';
 
 interface Props {
   label?: string;
-  variant?: 'solid' | 'ghost';
   size?: 'sm' | 'md';
   class?: string;
 }
 
-const { label = 'Commission a mural', variant = 'solid', size = 'md', class: className } = Astro.props;
+const { label = 'Commission a mural', size = 'md', class: className } = Astro.props;
 ---
 
 <a
-  class:list={['btn', `btn--${variant}`, size === 'sm' && 'btn--sm', className]}
+  class:list={['btn', 'btn--cta', size === 'sm' && 'btn--sm', className]}
   href={site.commissionFormUrl}
   target="_blank"
   rel="noopener"

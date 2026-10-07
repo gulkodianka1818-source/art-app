@@ -11,6 +11,11 @@
   --accent: #b9826b;
   --sage: #8d9a78;
 
+  /* Commission CTA: soft pastel apricot — warm, friendly, stands out on cream and dark */
+  --cta: #f5a07d;
+  --cta-hover: #ef8a62;
+  --cta-ink: #2b1c14;
+
   --serif: 'Cormorant Garamond', 'Times New Roman', serif;
   --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
 
@@ -207,6 +212,22 @@ em {
   --btn-bg: var(--accent);
   --btn-fg: #fff;
   --btn-border: var(--accent);
+}
+
+.btn--cta {
+  --btn-bg: var(--cta);
+  --btn-fg: var(--cta-ink);
+  --btn-border: var(--cta);
+  font-weight: 500;
+  box-shadow: 0 10px 24px -12px rgba(232, 128, 88, 0.75);
+}
+
+.btn--cta:hover,
+.section--dark .btn--cta:hover {
+  --btn-bg: var(--cta-hover);
+  --btn-border: var(--cta-hover);
+  --btn-fg: var(--cta-ink);
+  box-shadow: 0 14px 28px -12px rgba(232, 128, 88, 0.9);
 }
 
 .btn-row {
